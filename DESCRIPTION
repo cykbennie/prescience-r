@@ -1,0 +1,18 @@
+Package: prescience
+Type: Package
+Title: Approximate Best Subset Maximum Binary Prediction Rule (PRESCIENCE)
+Version: 0.1.0
+Date: 2018-07-12
+Authors@R: c(person("Yankang (Bennie)", "Chen", email = "yankang.chen@columbia.edu", role = c("aut", "cre")),
+  person("Le-Yu", "Chen", email = "lychen@econ.sinica.edu.tw", role = "aut"),
+  person("Sokbae", "Lee", email = "sl3841@columbia.edu", role = "aut"))
+Author: Yankang (Bennie) Chen [aut, cre],
+  Le-Yu Chen [aut],
+  Sokbae Lee [aut]
+Maintainer: Yankang (Bennie) Chen <yankang.chen@columbia.edu>
+Description: This package employs the Approximate Best Subset Maximum Binary Prediction Rule (PRESCIENCE) on the given variable selection problem.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: gurobi, slam, stats
+RoxygenNote: 6.0.1
