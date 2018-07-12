@@ -6,4 +6,4 @@ Chen, Le-Yu and Lee, Sokbae (2018), "Best Subset Binary Prediction".
 
 The above paper and the Matlab implementation of PRESCIENCE can be found at https://github.com/LeyuChen/Best-Subset-Binary-Prediction.
 
-Note: the codes in this R package are developed based on the above Matlab codes by Le-Yu Chen
+Note: the codes in this R package are developed based on the Matlab implementation by Le-Yu Chen.
