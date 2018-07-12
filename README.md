@@ -9,7 +9,7 @@ The above paper and the Matlab implementation of PRESCIENCE can be found at http
 
 ## Requirements
 
-This R package requires the following R packages:
+This R package requires the following three R packages:
 
 * [gurobi](http://www.gurobi.com/documentation/) - The Gurobi Optimizer is free under academic liscence
 * `slam`
@@ -28,6 +28,10 @@ The package can be installed from github:
 ```
 devtools::install_github("cykbennie/prescience-r")
 ```
+
+## Reference Manual
+
+Refer to the [prescience.pdf](prescience.pdf) file for details.
 
 ## Example
 
