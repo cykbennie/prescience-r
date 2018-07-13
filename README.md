@@ -3,19 +3,21 @@
 R package of the Approximate Best Subset Maximum Binary Prediction Rule (PRESCIENCE) proposed by Chen and Lee (2018).
 
 Description of this prediction method and its computation details can be found in the paper:
-Chen, Le-Yu and Lee, Sokbae (2018), "Best Subset Binary Prediction".
+[Chen, Le-Yu and Lee, Sokbae (2018), "Best Subset Binary Prediction"](https://arxiv.org/abs/1610.02738).
 
-The above paper and the Matlab implementation of PRESCIENCE can be found at https://github.com/LeyuChen/Best-Subset-Binary-Prediction.
+The Matlab implementation of PRESCIENCE can be found at https://github.com/LeyuChen/Best-Subset-Binary-Prediction.
 
 ## Requirements
 
-This R package requires the following three R packages:
+The `prescience` package requires the following three R packages:
 
-* [gurobi](http://www.gurobi.com/documentation/) - The Gurobi Optimizer is free under academic liscence
+* `gurobi`
 * `slam`
 * `stats`
 
-```
+**Important**: You must download the [Gurobi Optimizer](http://www.gurobi.com/) software before being able to install the `gurobi` package. The Gurobi Optimizer is free under academic liscence. See their [official documentation](http://www.gurobi.com/documentation/) for the software installation guide.
+
+``` r
 install.packages("slam")
 install.packages("stats")
 # For the installation of the gurobi package, see http://www.gurobi.com/documentation/.
@@ -25,7 +27,7 @@ install.packages("stats")
 
 The package can be installed from github:
 
-```
+``` r
 devtools::install_github("cykbennie/prescience-r")
 ```
 
@@ -35,7 +37,7 @@ Refer to the [prescience.pdf](prescience.pdf) file for details.
 
 ## Example
 
-```
+``` r
 # Load the package
 library(prescience)
 
