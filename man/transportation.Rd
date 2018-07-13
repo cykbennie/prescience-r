@@ -8,10 +8,10 @@
 are as follows:
 \describe{
   \item{auto}{Transportation mode choice with 1 for automobile and 0 otherwise}
-  \item{dcost}{Transit fare - automobile travel cost (in dollars)} 
+  \item{dcost}{Transit fare minus automobile travel cost (in dollars)} 
   \item{cars}{Number of cars owned by the traveler's household}
-  \item{dovtt}{Transit out-of-vehicle travel time - automobile out-of-vehicle travel time (in minutes)}
-  \item{divtt}{Transit in-vehicle travel time - automobile in-vehicle travel time (in minutes)}
+  \item{dovtt}{Transit out-of-vehicle travel time minus automobile out-of-vehicle travel time (in minutes)}
+  \item{divtt}{Transit in-vehicle travel time minus automobile in-vehicle travel time (in minutes)}
 }}
 \source{
 The \code{transportation} data were obtained from

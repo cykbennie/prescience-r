@@ -4,16 +4,16 @@
 #' \code{select} employs the Approximate Best Subset Maximum Binary Prediction Rule
 #' (PRESCIENCE) on the given variable selection problem.
 #'
-#' @param formula an object of class formula, relating the dependent variable to the grouping variable.
+#' @param formula an object of class formula of the format: (binary dependent variable) ~ (normalized focus variable) + (remaining focus variables) + (auxiliary variables).
 #' @param data a data frame containing the variables in the model.
-#' @param nfoc integer. The number of focus variable(s) (excluding the intercept).
+#' @param nfoc integer. The number of focus variable(s) excluding the intercept.
 #' @param q integer. The cardinality constraint for the covariate selection.
 #' @param bound numeric. The maximum absolute value of the bounds for all variables.
-#' @param beta0 integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable. Default = 1.
+#' @param beta0 integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable.
 #' @param warmstart logical. If \code{TRUE}, use the warm start strategy.
-#' @param tau the tuning parameter for enlarging the estimated bounds. Default = 1.5.
-#' @param mio integer. 1 for MIO method 1 and 2 for method 2 in the paper. Default = 1.
-#' @param tlim time limit (in seconds) specified for the MIO solver. Default = 86400.
+#' @param tau the tuning parameter for enlarging the estimated bounds.
+#' @param mio integer. 1 for MIO method 1 and 2 for method 2 in the paper.
+#' @param tlim time limit (in seconds) specified for the MIO solver.
 #' @import stats
 #' @import slam
 #' @import gurobi

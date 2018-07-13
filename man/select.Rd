@@ -8,25 +8,25 @@ select(formula, data, nfoc, q, bound, beta0 = 1, warmstart = TRUE,
   tau = 1.5, mio = 1, tlim = 86400)
 }
 \arguments{
-\item{formula}{an object of class formula, relating the dependent variable to the grouping variable.}
+\item{formula}{an object of class formula of the format: (binary dependent variable) ~ (normalized focus variable) + (remaining focus variables) + (auxiliary variables).}
 
 \item{data}{a data frame containing the variables in the model.}
 
-\item{nfoc}{integer. The number of focus variable(s) (excluding the intercept).}
+\item{nfoc}{integer. The number of focus variable(s) excluding the intercept.}
 
 \item{q}{integer. The cardinality constraint for the covariate selection.}
 
 \item{bound}{numeric. The maximum absolute value of the bounds for all variables.}
 
-\item{beta0}{integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable. Default = 1.}
+\item{beta0}{integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable.}
 
 \item{warmstart}{logical. If \code{TRUE}, use the warm start strategy.}
 
-\item{tau}{the tuning parameter for enlarging the estimated bounds. Default = 1.5.}
+\item{tau}{the tuning parameter for enlarging the estimated bounds.}
 
-\item{mio}{integer. 1 for MIO method 1 and 2 for method 2 in the paper. Default = 1.}
+\item{mio}{integer. 1 for MIO method 1 and 2 for method 2 in the paper.}
 
-\item{tlim}{time limit (in seconds) specified for the MIO solver. Default = 86400.}
+\item{tlim}{time limit (in seconds) specified for the MIO solver.}
 }
 \value{
 a list with 7 elements:

@@ -11,8 +11,8 @@ Author: Yankang (Bennie) Chen [aut, cre],
   Sokbae Lee [aut]
 Maintainer: Yankang (Bennie) Chen <yankang.chen@columbia.edu>
 Description: This package employs the Approximate Best Subset Maximum Binary Prediction Rule (PRESCIENCE) on the given variable selection problem.
+Imports: gurobi, slam, stats
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: gurobi, slam, stats
 RoxygenNote: 6.0.1
