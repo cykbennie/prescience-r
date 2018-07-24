@@ -42,7 +42,7 @@ Refer to the [prescience.pdf](prescience.pdf) file for details.
 library(prescience)
 
 # Create the PRESCIENCE object
-results <- select(auto ~ dcost + cars + dovtt + divtt, data = transportation, nfoc = 1, q = 1, bound = 10, beta0 = 1, warmstart = TRUE, tau = 1.5, mio = 1, tlim = 86400)
+results <- select(auto ~ dcost + cars + dovtt + divtt, data = transportation, nfoc = 1, q = 1, bound = 10, beta0 = 1, tol = NULL, warmstart = TRUE, tau = 1.5, mio = 1, tlim = 86400)
 
 # Summary of PRESCIENCE
 summary(results)
