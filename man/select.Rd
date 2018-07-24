@@ -4,8 +4,8 @@
 \alias{select}
 \title{Approximate Best Subset Maximum Binary Prediction Rule (PRESCIENCE)}
 \usage{
-select(formula, data, nfoc, q, bound, beta0 = 1, warmstart = TRUE,
-  tau = 1.5, mio = 1, tlim = 86400)
+select(formula, data, nfoc, q, bound, beta0 = 1, tol = NULL,
+  warmstart = TRUE, tau = 1.5, mio = 1, tlim = 86400)
 }
 \arguments{
 \item{formula}{an object of class formula of the format: (binary dependent variable) ~ (normalized focus variable) + (remaining focus variables) + (auxiliary variables).}
@@ -19,6 +19,8 @@ select(formula, data, nfoc, q, bound, beta0 = 1, warmstart = TRUE,
 \item{bound}{numeric. The maximum absolute value of the bounds for all variables.}
 
 \item{beta0}{integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable.}
+
+\item{tol}{numeric. Tolerance level. If \code{NULL}, use the default tolerance level.}
 
 \item{warmstart}{logical. If \code{TRUE}, use the warm start strategy.}
 

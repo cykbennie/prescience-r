@@ -10,6 +10,7 @@
 #' @param q integer. The cardinality constraint for the covariate selection.
 #' @param bound numeric. The maximum absolute value of the bounds for all variables.
 #' @param beta0 integer. The coefficient taking value either 1 or -1 to normalize the scale for the first focus variable.
+#' @param tol numeric. Tolerance level. If \code{NULL}, use the default tolerance level.
 #' @param warmstart logical. If \code{TRUE}, use the warm start strategy.
 #' @param tau the tuning parameter for enlarging the estimated bounds.
 #' @param mio integer. 1 for MIO method 1 and 2 for method 2 in the paper.
@@ -37,14 +38,15 @@
 #' coef(results)
 
 
-select <- function(formula, data, nfoc, q, bound, beta0 = 1, warmstart = TRUE, tau = 1.5, mio = 1, tlim = 86400){
+select <- function(formula, data, nfoc, q, bound, beta0 = 1, tol = NULL, warmstart = TRUE, tau = 1.5, mio = 1, tlim = 86400){
   # Error checking
   if (missing(formula) || class(formula) != "formula")
     stop("'formula' is missing or incorrect.")
 
   requireNamespace("gurobi")
   gc()
-
+  results <- list()
+  
   df <- model.frame(formula, data)
   varnames <- colnames(df)
   varnames <- varnames[2:length(varnames)]
@@ -62,12 +64,16 @@ select <- function(formula, data, nfoc, q, bound, beta0 = 1, warmstart = TRUE, t
 
   d <- ncol(x_aux)
   bnd <- cbind(matrix(rep(-bound, nfoc+d), ncol = 1), matrix(rep(bound, nfoc+d), ncol = 1))  # set the initial parameter bounds
-  tol <- floor(sqrt(log(n_tr) * n_tr) / 2)  # set the tolerance level value
+  
+  if (is.null(tol)) {
+    tol <- floor(sqrt(log(n_tr) * n_tr) / 2)  # set the tolerance level value
+    results$tolerance <- tol/n_tr
+  } else {
+    results$tolerance <- tol
+    tol <- tol * n_tr
+  }
 
   # Results
-  results <- list()
-  results$tolerance <- tol/n_tr
-
   if (warmstart) { # warm start MIO
     max_score <- warm_start_max_score(Y_tr, x_foc, x_aux, beta0, q, tlim, tol, bnd, mio, tau)
     results$status <- max_score$status
